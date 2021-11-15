@@ -9,3 +9,6 @@ covid_excess_mortality https://github.com/owid/covid-19-data/tree/master/public/
 world happniess , world happiness 2021 https://www.kaggle.com/ajaypalsinghlo/world-happiness-report-2021?select=world-happiness-report.csv
 
 covid_19 by country, by region: https://github.com/TheEconomist/covid-19-the-economist-global-excess-deaths-model/tree/main/output-data
+
+
+u.s state vaccinations, https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations
