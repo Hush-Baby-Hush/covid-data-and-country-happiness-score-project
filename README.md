@@ -23,3 +23,8 @@ covid_19 by country, by region: https://github.com/TheEconomist/covid-19-the-eco
 u.s state vaccinations, https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations
 
 covid death https://github.com/TheEconomist/covid-19-the-economist-global-excess-deaths-model/blob/main/source-data/country_daily_excess_deaths.csv
+
+Covid global vaccination data:
+    https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations
+
+
