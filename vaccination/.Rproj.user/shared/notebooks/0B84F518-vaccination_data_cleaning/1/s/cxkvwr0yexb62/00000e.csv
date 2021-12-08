@@ -1,0 +1,8 @@
+"0","location_2020 = row_data %>%"
+"0","  select(location, date, people_vaccinated, people_fully_vaccinated, people_vaccinated_per_hundred, people_fully_vaccinated_per_hundred) %>% "
+"0","  filter(date<""2021-01-01"") %>% "
+"0","  drop_na(people_vaccinated) %>% "
+"0","  group_by(location) %>% "
+"0","  filter(row_number()==n())"
+"0",""
+"0","location_2020"

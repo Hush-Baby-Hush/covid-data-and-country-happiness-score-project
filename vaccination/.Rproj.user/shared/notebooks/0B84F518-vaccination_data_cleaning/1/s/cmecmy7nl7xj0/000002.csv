@@ -1,0 +1,1 @@
+"0","write.csv(world_vacci_data_2020,""data/world_vacci_data_2020.csv"", row.names = FALSE)"

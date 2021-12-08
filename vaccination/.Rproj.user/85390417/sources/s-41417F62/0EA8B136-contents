@@ -1,0 +1,82 @@
+url <- paste0("https://raw.githubusercontent.com/fivethirtyeight/",
+              "data/master/college-majors/recent-grads.csv")
+grads <- data.table::fread(url)
+grads = as.data.frame(grads)
+library("dplyr")
+gradSummary <- function(grads) {
+  
+  # Enter code here
+  grads = subset(grads, Total > 1000)
+  grads = grads %>% 
+    group_by(Major_category) %>% 
+    summarise(Employment_rate=round(100*sum(Employed)/sum(Total), digits = 2)) %>% 
+    arrange(desc(Employment_rate)) 
+  
+  grads = as.data.frame(grads)
+  return(grads)
+}
+gradSummary(grads)
+
+airdata = read.csv("airquality.csv")
+airQualitySummary <- function(airdata) {
+  
+  # Enter code here
+  airdata = airdata %>% 
+    select(Month, Ozone, Temp) %>% 
+    group_by(Month) %>% 
+    summarise(Ozone=mean(Ozone, na.rm = TRUE), Temp = mean(Temp)) %>% 
+    arrange(Month)
+  airdata = as.data.frame(airdata)
+  return(airdata)
+}
+
+##
+gm_growth <- function(gapminder, continent_selected) {
+  
+  # Enter code here
+  # The incoming object can be assumed to be a 'tibble' and a 'character'
+  # The returned object should also be a 'tibble'
+  # Use 'dplyr' functions. Not 'data.table'. Not 'aggregate'.
+  ans = filter(gapminder,continent == continent_selected)
+  ans = ans %>% 
+    group_by(country) %>% 
+    mutate(prevPeriod=lag(year,1)) %>% 
+    mutate(lifeExpGrowth=100*(lifeExp/lag(lifeExp,1)-1)) %>% 
+    mutate(popGrowth=100*(pop/lag(pop,1)-1)) %>% 
+    mutate(gdppcGrowth =100*(gdpPercap/lag(gdpPercap,1)-1))
+  ans = na.omit(ans, cols = c("lifeExpGrowth", "popGrowth", "gdppcGrowth"))
+  
+  
+  return(ans)
+  
+}
+
+##
+med_flight_arr_del <- function(flights) {
+  
+  # Enter code here
+  # The incoming object can be assumed to be a 'tibble'
+  # The returned object should also be a 'tibble'
+  # Use 'dplyr' functions. Not 'data.table'. Not 'aggregate'.
+  ans = flights %>%
+    group_by(dest,carrier) %>%
+    summarise(median_arr_delay = median(arr_delay)) %>% 
+    select(dest,carrier,median_arr_delay) %>% 
+    arrange(median_arr_delay) %>% 
+    head(10)
+  
+  return(ans)
+}
+
+##
+oneup <- function(x) toupper(x[1])
+
+par_toupper <- function(letters, cores) {
+  
+  # Enter code here
+  result = unlist(mclapply(letters, oneup, mc.cores = cores))
+  return(result)
+  
+}
+
+##

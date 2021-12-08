@@ -1,0 +1,5 @@
+"0","world_vacci_data_2020 = rbind(location_2020, country2020_zero)"
+"0","world_vacci_data_2020 = world_vacci_data_2020 %>%"
+"0","  select(-date) "
+"0",""
+"0","world_vacci_data_2020"

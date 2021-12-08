@@ -1,0 +1,5 @@
+"0","country2020_zero = location_2021 %>%"
+"0","  select(location) %>%"
+"0","  mutate(date = ""2020-12-31"", people_vaccinated = 0, people_fully_vaccinated = 0, people_vaccinated_per_hundred = 0, people_fully_vaccinated_per_hundred = 0)"
+"0",""
+"0","country2020_zero"
