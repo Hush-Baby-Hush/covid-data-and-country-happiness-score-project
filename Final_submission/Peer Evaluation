@@ -27,7 +27,7 @@ Kimmy Liu's Contribution:
 4.explore some r libraries
 5.merged and cleaned covid-19 vaccination and world happiness datasets using R join functions 
 6.plotted the trend of covid-19 vaccinations rate
-7.plotted the vaccination-happiness plot
+7.plotted the vaccination-happiness plot, find the correlation between these two
 8.descibed the plots and explained the rationales for plotting the graphs
 9.prepared and cleaned dataset for world map data plot
 
