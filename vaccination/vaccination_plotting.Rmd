@@ -8,6 +8,9 @@ library("ggplot2")
 library("dplyr")
 ```
 
+
+#### This plot reveals the relationship between country vaccination rate and country happiness scores. We can see from the plot that the are positive related, and countries with higher vaccination rate generally have higher happiness score. 
+
 ```{r}
 ggplot(vacci_happiness, aes(x = people_fully_vaccinated_per_hundred, y = Ladder.score)) +
     geom_point() +
