@@ -14,7 +14,7 @@ library(tidyverse)
 
 
 ```{r world happiness}
-world_happiness <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/world-happiness-report-2020.csv?token=AKH4K3ZTOOQABV5NEUJJGQLBXJOCQ")
+world_happiness <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/world-happiness-report-2020.csv?token=AKH4K3ZTOOQABV5NEUJJGQLBXJOCQ",show_col_types = FALSE)
 
 world_happiness$region = world_happiness$`Country name`
 
@@ -69,12 +69,14 @@ map2
 ```
 
 
-```{r covid}
-covid_data_2020 = readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/covid_2020_total.csv?token=AKH4K33CEG4UJXXTNV7LLFLBXJTT2")
+```{r covid, message = FALSE, warning=FALSE}
+covid_data_2020 = readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/covid_2020_total.csv?token=AKH4K33CEG4UJXXTNV7LLFLBXJTT2", show_col_types = FALSE)
 #remove first index column
+
 covid_data_2020 <- covid_data_2020[ -c(1) ]
 # View(covid_data_2020)
 covid_data_2020$region = covid_data_2020$`country`
+
 
 mapdata <- map_data("world") ##ggplot2
 # View(mapdata)
@@ -106,7 +108,8 @@ mapdata_and_covid_2020 <- left_join(new_mapdata, covid_data_2020, by="region")
 # View(mapdata_and_covid_2020)
 
 map3<-ggplot(mapdata_and_covid_2020, aes( x = long, y = lat, group=group)) +
-  geom_polygon(aes(fill = total_cases), color = "black")
+  geom_polygon(aes(fill = total_cases), color = "black") +
+  ggtitle("total number of covid cases world map")
 
 map4 <- map3 + scale_fill_gradient(name = "total_cases", low = "light blue", high =  "dodgerblue4", na.value = "grey50")+
   theme(axis.text.x = element_blank(),
@@ -119,7 +122,8 @@ map4
 
 
 map5<-ggplot(mapdata_and_covid_2020, aes( x = long, y = lat, group=group)) +
-  geom_polygon(aes(fill = death_case_ratio), color = "black")
+  geom_polygon(aes(fill = death_case_ratio), color = "black")+
+  ggtitle("covid death ratio world map")
 
 map6 <- map5 + scale_fill_gradient(name = "death_case_ratio", low = "light blue", high =  "dodgerblue4", na.value = "grey50")+
   theme(axis.text.x = element_blank(),
@@ -130,24 +134,25 @@ map6 <- map5 + scale_fill_gradient(name = "death_case_ratio", low = "light blue"
         rect = element_blank())
 map6
 
-
 # require(gridExtra)
 # 
 # grid.arrange(map6, map5, widths = c(10,10), ncol=2)
 ```
+From the **total number of covid cases world map**, we can observe that countries such as United States, India and Brazil have very high number of covid infection rate. On the other hand, countries like China have lower covid infection rate. 
+
+However, from the **covid death ratio world map**, we can observe that countries like United States, India and Brazil, which have very high number of covid infection rate, now have a relatively lower death ratio. This interesting phenomenon could be due to effective vaccination or unreported/misrecorded death rate. 
 
 
 
-
-
-```{r vaccination}
-vaccination_data_2020 <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/vaccination/data/world_vacci_data_2020.csv?token=AKH4K37S6CBXCEW544XX6K3BXJ4CK")
+```{r }
+vaccination_data_2020 <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/vaccination/data/world_vacci_data_2020.csv?token=AKH4K37S6CBXCEW544XX6K3BXJ4CK",show_col_types = FALSE)
 vaccination_data_2020$region = vaccination_data_2020$`location`
 
 mapdata_and_vaccination_2020 <- left_join(new_mapdata, vaccination_data_2020, by="region")
 
 map5<-ggplot(mapdata_and_vaccination_2020, aes( x = long, y = lat, group=group)) +
-  geom_polygon(aes(fill = people_vaccinated), color = "black")
+  geom_polygon(aes(fill = people_vaccinated), color = "black")+
+  ggtitle("total number of vaccinated people world map")
 
 map6 <- map5 + scale_fill_gradient(name = "people_vaccinated", low = "light blue", high =  "dodgerblue4", na.value = "grey50")+
   theme(axis.text.x = element_blank(),
@@ -157,12 +162,18 @@ map6 <- map5 + scale_fill_gradient(name = "people_vaccinated", low = "light blue
         axis.title.x=element_blank(),
         rect = element_blank())
 map6
-
-
-
 ```
+From the **total number of vaccinated people world map**, we can observe that countries such as United States have very high vaccination rate. This justifies my previous assumption about United State's low death rate ratio. On the other hand, vaccination information is not provided for countries like China in the raw data we find. 
+
+The low vaccination rate in countries like India, Brazil and Russia could be one of the key factors that contributed to their high covid-related death incidents.
+
+
+
+To examine the whether the differences between the covid data, vaccination data and world happiness data are statistically significant, we wish to conduct ANOVA.
+
+Now we would like to merge covid data, vaccination data and world happiness data together to continue our ANOVA analysis.
 ```{r code}
-world_happiness <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/world-happiness-report-2020.csv?token=AKH4K3ZTOOQABV5NEUJJGQLBXJOCQ")
+world_happiness <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/world-happiness-report-2020.csv?token=AKH4K3ZTOOQABV5NEUJJGQLBXJOCQ",show_col_types = FALSE)
 
 world_happiness$region = world_happiness$`Country name`
 
@@ -179,14 +190,14 @@ world_happiness = world_happiness |>
   mutate(region = replace(region, region == 'Greenland', 'Denmark'))
 
 
-covid_data_2020 = readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/covid_2020_total.csv?token=AKH4K33CEG4UJXXTNV7LLFLBXJTT2")
+covid_data_2020 = readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/data/covid_2020_total.csv?token=AKH4K33CEG4UJXXTNV7LLFLBXJTT2",show_col_types = FALSE)
 #remove first index column
 covid_data_2020 <- covid_data_2020[ -c(1) ]
 # View(covid_data_2020)
 covid_data_2020$region = covid_data_2020$`country`
 
 
-vaccination_data_2020 <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/vaccination/data/world_vacci_data_2020.csv?token=AKH4K37S6CBXCEW544XX6K3BXJ4CK")
+vaccination_data_2020 <- readr::read_csv("https://raw.githubusercontent.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/master/vaccination/data/world_vacci_data_2020.csv?token=AKH4K37S6CBXCEW544XX6K3BXJ4CK",show_col_types = FALSE)
 vaccination_data_2020$region = vaccination_data_2020$`location`
 
 
@@ -206,7 +217,6 @@ fit1 <- aov(`Ladder score` ~ `Generosity`+ `Perceptions of corruption`+ `total_c
 anova(fit1)
 ```
 For this data, we will take p-value = 0.05 as a bench mark and we will run our analysis on significant factors based on this p-value.
-
 
 
 According to the Analysis of Variance Table, we can conclude the following:
@@ -243,4 +253,4 @@ According to the Analysis of Variance Table, we can conclude the following:
 
 15. Healthy life expectancy is not a significant predictor of happiness ladder score as its Pr > F value (0.0725201) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor. 
 
-In conclusion, we can conclude that perceptions of corruption, total covid cases, total covid deaths, total covid cases per 100k,  covid death case ratio, number of vaccinated people, freedom to make life choices, logged GDP per capita and social support are significant predictor of happiness of a country's citizens.
+**In conclusion, we can conclude that perceptions of corruption, total covid cases, total covid deaths, total covid cases per 100k,  covid death case ratio, number of vaccinated people, freedom to make life choices, logged GDP per capita and social support are significant predictor of happiness of a country's citizens.**
