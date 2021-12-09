@@ -4,8 +4,9 @@ auther: "Kimmy Liu"
 output: html_document
 ---
 
-```{r}
+```{r, include=FALSE}
 library("dplyr")
+library(tidyverse)
 ```
 
 ### Get hapiness data
@@ -18,6 +19,11 @@ happiness_2020
 ```
 
 ### merge two dataset
+```{r}
+world_vacci_data_2021 = read.csv("data/world_vacci_data_2021.csv")
+```
+
+
 ```{r}
 vacci_happiness = left_join(world_vacci_data_2021, happiness_2020, by = c("location"="Country.name"))
 vacci_happiness = vacci_happiness %>%

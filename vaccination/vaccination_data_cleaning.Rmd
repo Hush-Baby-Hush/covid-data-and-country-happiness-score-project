@@ -6,7 +6,7 @@ output: html_document
 
 
 ### Setup
-```{r, echo=FALSE}
+```{r, echo=FALSE, include=FALSE}
 library("dplyr")
 library("tidyr")
 ```

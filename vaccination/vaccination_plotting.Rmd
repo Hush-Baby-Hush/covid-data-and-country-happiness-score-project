@@ -3,9 +3,13 @@ title: "vaccination_plotting"
 output: html_document
 ---
 
-```{r}
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
 library("ggplot2")
 library("dplyr")
+```
+
+```{r}
+vacci_happiness = read.csv("data/vacci_happiness.csv")
 ```
 
 
@@ -15,7 +19,7 @@ library("dplyr")
 ggplot(vacci_happiness, aes(x = people_fully_vaccinated_per_hundred, y = Ladder.score)) +
     geom_point() +
     geom_smooth(method = "lm") +
-    ggtitle("Vaccination Rate VS Happiness Score") +
+    ggtitle("Vaccination Rate vs Happiness Score") +
     xlab("People Fully Vaccinated Per Hundred") +
     ylab("Happiness Score") +
     theme_light()
