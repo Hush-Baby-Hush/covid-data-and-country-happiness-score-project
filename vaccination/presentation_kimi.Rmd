@@ -1,11 +1,83 @@
 ---
 title: "presentation"
+auther: "Kimmy Liu"
 output: html_document
 ---
 
-## In this step, we analyze the relationship between each country's happiness score and vaccination rate, and we are surprised to find that there is a strong positive relationship between the two. 
+```{r, echo=FALSE, warning=FALSE, include=FALSE}
+library("ggplot2")
+library("dplyr")
+```
 
-### First we do some data cleaning job. 
+### In this step, we plot vaccination trend for 5 most happiest countries and 5 least countries. By comparing the plot we can see a clear relationship and trend between vaccination rate and happy score. 
+
+#### Here we calculate 5 most happiest countries
+```{r}
+happiness = read.csv("data/world-happiness-report-2020.csv")
+
+top5 = happiness %>%
+  head(5) %>%
+  select(Country.name)
+top5
+```
+
+
+#### Here we calculate 5 least happiest countries
+```{r}
+bottom5 = happiness %>%
+  tail(5) %>%
+  select(Country.name)
+bottom5
+```
+
+
+#### Here we select vaccination data for the 5 most happiest countries
+```{r, warning=FALSE}
+vacci = read.csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv")
+top5vacci = vacci %>%
+  filter(location == "Finland" | location == "Denmark" | location == "Switzerland" | location == "Iceland" | location == "Netherlands")
+
+top5vacci$date = as.Date(top5vacci$date, "%Y-%m-%d")
+```
+
+
+#### Here we plot vaccination rate trend for the 5 most happiest countries
+```{r}
+ggplot(top5vacci,aes(x=date,y=people_fully_vaccinated_per_hundred,color=location))+
+  geom_point()+
+  labs(title = '2021 Daily Covid Vaccinations Rate in 5 Most Happy Countries')+
+  theme_bw()+
+  scale_x_date(date_breaks = '10 day')+
+  theme(axis.text.x = element_text(size = 8,angle = 90, hjust = 0.3, vjust = 0.3),legend.position="bottom")
+```
+
+#### Here we select vaccination data for the 5 least happiest countries
+```{r, warning=FALSE}
+bottom5vacci = vacci %>%
+  filter(location == "Lesotho" | location == "Botswana" | location == "Rwanda" | location == "Zimbabwe" | location == "Afghanistan")
+
+bottom5vacci$date = as.Date(bottom5vacci$date, "%Y-%m-%d")
+```
+
+
+#### Here we plot vaccination rate trend for the 5 least happiest countries
+```{r}
+ggplot(bottom5vacci,aes(x=date,y=people_fully_vaccinated_per_hundred,color=location))+
+  geom_point()+
+  labs(title = '2021 Daily Covid Vaccinations Rate in 5 Least Happy Countries')+
+  theme_bw()+
+  scale_x_date(date_breaks = '10 day')+
+  theme(axis.text.x = element_text(size = 8,angle = 90, hjust = 0.3, vjust = 0.3),legend.position="bottom")
+```
+
+#### These plot reveals that the 5 most happiest country apprently have higher vaccination rate. 
+
+
+
+
+### In this step, we analyze the relationship between each country's happiness score and vaccination rate, and we are surprised to find that there is a strong positive relationship between the two. 
+
+#### First we do some data cleaning job. 
 ```{r, echo=FALSE, include=FALSE}
 library("dplyr")
 library("tidyr")
@@ -104,4 +176,4 @@ world_vacci_data_2020 = world_vacci_data_2020 %>%
   select(-date) 
 ```
 
-#### Now, we have finished data cleaning and preparation for world maps vaccination rate. 
+#### Now, we have finished data cleaning and preparation for world maps vaccination rate. (Songyuan will present world maps)
