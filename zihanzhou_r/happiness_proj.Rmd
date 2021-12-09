@@ -82,7 +82,7 @@ world <- ne_countries(scale = "medium", returnclass = "sf")
 #### Merge dataset "world" and dataset "happiness", and transform the output from data.frame to sf using method 'st_as_sf'</br>
 ```{r}
 colnames(world)[9] = "Entity"
-merge_data <- merge(h1, world, by="Entity")
+merge_data <- merge(h1, world, by="Entity",all.y=TRUE)
 world_ <- st_as_sf(merge_data)
 ```
 
