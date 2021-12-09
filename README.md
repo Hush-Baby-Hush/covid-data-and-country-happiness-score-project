@@ -42,3 +42,6 @@ Covid global vaccination data:
 
 ## Vedio
 - [link]()
+
+## Peer Evaluation
+- [link](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Peer%20Evaluation)
