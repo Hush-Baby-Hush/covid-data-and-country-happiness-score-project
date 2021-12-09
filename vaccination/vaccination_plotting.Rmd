@@ -1,0 +1,65 @@
+---
+title: "vaccination_plotting"
+output: html_document
+---
+
+```{r}
+library("ggplot2")
+library("dplyr")
+```
+
+## Read Files
+```{r}
+happiness_2020 = read.csv("data/world-happiness-report-2020.csv")
+happiness_2020 = happiness_2020 %>%
+  select(Country.name, Ladder.score)
+
+happiness_2020
+```
+
+## Top and bottom happiness (2020)
+
+```{r}
+## 2020 Bottom 5
+Bottom_2020 = happiness_2020 %>%
+  tail(5) %>%
+  select(Country.name)
+
+Bottom_2020
+```
+
+
+```{r}
+## 2020 Bottom 5
+Top_2020 = happiness_2020 %>%
+  head(5) %>%
+  select(Country.name)
+
+Top_2020
+```
+
+
+```{r}
+## 2020 Top 5
+Top_2020 = happiness_2020[order(happiness_2020$Score,decreasing = TRUE),]$Country[1:5]
+vacci_2020_top = vacci_2020[vacci_2020$country %in% Top_2020,]
+vacci_2020_top$country = as.factor(vacci_2020_top$country)
+vacci_2020_top$date = as.Date(paste("2020","-",vacci_2020_top$Month,"-",vacci_2020_top$day,sep=''))
+
+ggplot(vacci_2020_top,aes(x=date,y=daily_vacci_cases_per_100k,color=country))+
+  geom_point()+
+  labs(title = '2020 Daily vacci Cases in 5 Happiest Countries')+
+  theme_bw()+
+  scale_x_date(date_breaks = '1 week',limits=c(as.Date("2020-03-12"),as.Date("2020-12-18")))+
+  theme(axis.text.x = element_text(size = 7,angle = 90, hjust = 0.3, vjust = 0.3),legend.position="bottom")
+
+
+
+ggplot(vacci_2020_top,aes(x=date,y=daily_vacci_deaths_per_100k,color=country))+
+  geom_point()+
+  labs(title = '2020 Daily vacci Deaths in 5 Happiest Countries')+
+  theme_bw()+
+  scale_x_date(date_breaks = '1 week',limits=c(as.Date("2020-03-12"),as.Date("2020-12-18")))+
+  theme(axis.text.x = element_text(size = 7,angle = 90, hjust = 0.3, vjust = 0.3),legend.position="bottom")
+
+```
