@@ -2,11 +2,10 @@
 
 ## Project outline:
 
-1. Visualize the life satisfaction (happiness index) across the globe.
-2. Visualize the trend of Covid-19 cases and mortality rates.
-3. Visualize the correlation between Covid-19 vaccination rates and world happiness.
-4. Visualize the relationship between global happiness and different factors across fields, such as public policy, public health, economics etc..
-5. Combine the world happiness with Covid-19 cases and deaths, and vaccination rates, and see how the latter three influence the happiness index.
+1. Visualize the life satisfaction (happiness index) across the globe. (in file zihanzhou_r, done by Zihan Zhou)
+2. Visualize the trend of Covid-19 cases and mortality rates. (in file covid-deaths, done by Shiyuan Wang)
+3. Visualize the correlation between Covid-19 vaccination rates and world happiness. (in file vaccination, done by Kimmy Liu)
+4. Combine the world happiness with Covid-19 cases and deaths, and vaccination rates, and see how the latter three and different factors across fields, such as public policy, public health, economics etc. influence the happiness index. (in file songyuan, done by Songyuan Wang)
 
 ## Data Aquisition:
 
