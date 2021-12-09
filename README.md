@@ -6,7 +6,7 @@
 5. Explore as many R packages as we can.
 
 # Project Deliverables
-## Report 
+## Final Report 
 - [pdf](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.pdf)
 - [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.Rmd)
 
