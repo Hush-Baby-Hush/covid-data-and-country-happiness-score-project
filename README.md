@@ -37,6 +37,7 @@ Covid global vaccination data:
 
 ## Slides
 - [pdf](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.pdf)
+  We have a 7-page html but it's too large to show here, so we upload the pdf file of our slides.
 - [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.Rmd)
 
 ## Vedio
