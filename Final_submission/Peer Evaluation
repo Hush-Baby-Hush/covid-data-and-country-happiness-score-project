@@ -10,6 +10,15 @@ Shiyuan Wang's Contribution:
 
 
 Zihan Zhou's Contribution:
+1.conducted researches on possible datasets and contributed ideas(which are adopted later) on project outline
+2.attended weekly meetings and updated progress with team menbers
+3.checked the vadility and relationship betweeen datasets
+4.used dcsat method and counytrycode library to form desire data.table
+5.explored many new libraries. Including using tidyverse and sf for data cleaning and wrangling, using ggreple for plotting
+6.experimented new graphing method in gglot2 libraries.
+7.plotted world map data based on happiness, self taught usage of merge method and transformation of sf data.
+8.illustrated each plots and explored the correlation relationship.
+9.contributed in formatting projet paper and powerpoint. 
 
 Kimmy Liu's Contribution:
 1.contributed by proposing project ideas
@@ -18,9 +27,9 @@ Kimmy Liu's Contribution:
 4.explore some r libraries
 5.merged and cleaned covid-19 vaccination and world happiness datasets using R join functions 
 6.plotted the trend of covid-19 vaccinations rate
-6.plotted the vaccination-happiness plot
-7.descibed the plots and explained the rationales for plotting the graphs
-8.prepared and cleaned dataset for world map data plot
+7.plotted the vaccination-happiness plot
+8.descibed the plots and explained the rationales for plotting the graphs
+9.prepared and cleaned dataset for world map data plot
 
 
 
@@ -36,15 +45,5 @@ Songyuan Wang's Contribution:
 9.conducted statisitical analysis such as ANOVA analysis on variables to determine which ones are the significant predictors of world happiness index
 10.analyzed my ANOVA output, explained my reasonings for selecting important factors and summarized my findings
 
-Acknowledgement to each member's contribution: Songyuan Wang, Shiyuan Wang, Kimmy Liu, __
 
-
-
-Lesotho
-Botswana
-Rwanda
-Zimbabwe
-Afghanistan
-
-
-
+Acknowledgement to each member's contribution: Songyuan Wang, Shiyuan Wang, Kimmy Liu, Zihan Zhou
