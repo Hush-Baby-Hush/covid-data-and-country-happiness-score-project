@@ -403,6 +403,7 @@ vaccination_covid_world_happiness_2020</code></pre>
 ## #   Explained by: Social support &lt;dbl&gt;,
 ## #   Explained by: Healthy life expectancy &lt;dbl&gt;, …</code></pre>
 <pre class="r"><code># write.csv(vaccination_covid_world_happiness_2020,&quot;/cloud/project/vaccination_covid_world_happiness_2020.csv&quot;)</code></pre>
+<p>In this analysis we consider all the data and want to examine happiness variables, covid-related variables and vaccination-related variables, explaining the happiness ladder score.</p>
 <pre class="r"><code># head(vaccination_covid_world_happiness_2020)
 
 fit1 &lt;- aov(`Ladder score` ~ `Generosity`+ `Perceptions of corruption`+ `total_cases` +`total_deaths` +`people_fully_vaccinated_per_hundred`+`total_cases_per_100k`+ `total_deaths_per_100k`+ `death_case_ratio` + `people_vaccinated` + `people_fully_vaccinated` + `people_vaccinated_per_hundred`+ `Freedom to make life choices` +   + `Logged GDP per capita`+ `Social support`+ `Healthy life expectancy`, vaccination_covid_world_happiness_2020)
@@ -430,6 +431,26 @@ anova(fit1)</code></pre>
 ## Residuals                           97 27.9002  0.2876                      
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>For this data, we will take p-value = 0.05 as a bench mark and we will run our analysis on significant factors based on this p-value.</p>
+<p>According to the Analysis of Variance Table, we can conclude the following:</p>
+<ol style="list-style-type: decimal">
+<li><p>Generosity is not a significant predictor of happiness ladder score as its Pr &gt; F value (0.4232497) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor.</p></li>
+<li><p>Perceptions of corruption is a significant predictor of happiness ladder score as its Pr &gt; F value (1.015e-15) is smaller than 0.05. Therefore, we have to reject the null hypothesis that year is a non-significant predictor.</p></li>
+<li><p>total_cases is a significant predictor of happiness ladder score as its Pr &gt; F value (0.0033645) is smaller than 0.05. Therefore, we have to reject the null hypothesis that year is a non-significant predictor.</p></li>
+<li><p>total_deaths is a significant predictor of happiness ladder score as its Pr &gt; F value (0.0004451) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>people_fully_vaccinated_per_hundred is not a significant predictor of happiness ladder score as its Pr &gt; F value (0.1344131) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor.</p></li>
+<li><p>total_cases_per_100k is a significant predictor of happiness ladder score as its Pr &gt; F value (1.989e-13) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>total_deaths_per_100k is not a significant predictor of happiness ladder score as its Pr &gt; F value (0.1954529) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor.</p></li>
+<li><p>death_case_ratio is a significant predictor of happiness ladder score as its Pr &gt; F value (0.0144044) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>people_vaccinated is a significant predictor of happiness ladder score as its Pr &gt; F value (0.0033722) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>people_fully_vaccinated is not a significant predictor of happiness ladder score as its Pr &gt; F value (0.1480725) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor.</p></li>
+<li><p>people_vaccinated_per_hundred is not a significant predictor of happiness ladder score as its Pr &gt; F value (0.4607941) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor.</p></li>
+<li><p>Freedom to make life choices is a significant predictor of happiness ladder score as its Pr &gt; F value (1.301e-12) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>Logged GDP per capita is a significant predictor of happiness ladder score as its Pr &gt; F value (4.285e-12) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>Social support is a significant predictor of happiness ladder score as its Pr &gt; F value (0.0001988) is smaller than 0.05. Therefore, we have to reject the null hypothesis that species is a non-significant predictor.</p></li>
+<li><p>Healthy life expectancy is not a significant predictor of happiness ladder score as its Pr &gt; F value (0.0725201) is larger than 0.05. Therefore, we have fail to reject the null hypothesis that intervals is a non-significant predictor.</p></li>
+</ol>
+<p><strong>In conclusion, we can conclude that perceptions of corruption, total covid cases, total covid deaths, total covid cases per 100k, covid death case ratio, number of vaccinated people, freedom to make life choices, logged GDP per capita and social support are significant predictor of happiness of a country’s citizens.</strong></p>
 </div>
 
 
