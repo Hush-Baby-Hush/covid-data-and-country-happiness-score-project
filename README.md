@@ -41,7 +41,7 @@ Covid global vaccination data:
 - [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.Rmd)
 
 ## Vedio
-- [link]()
+- [link](https://uofi.box.com/s/vxr001a6s8ruuucf5n8pqcm6kisvgtzk)
 
 ## Peer Evaluation
 - [link](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Peer%20Evaluation)
