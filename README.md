@@ -6,7 +6,8 @@
 2. Visualize the trend of Covid-19 cases and mortality rates, and combine the world happiness with total Covid-19 cases and deaths. (in file [covid-deaths](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/covid-deaths), done by Shiyuan Wang)
 3. Combine the world happiness with vaccination rate, and visualize the correlation between Covid-19 vaccination rates and world happiness. (in [file vaccination](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/vaccination), done by Kimmy Liu)
 4. Use Anova analysis to figure the impacts of Covid-19 cases, deaths, vaccination rates and different factors across fields, such as public policy, public health, economics etc. on the happiness index. (in file [songyuan](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/songyuan), done by Songyuan Wang)
-
+5. Explore as many R packages as we can.
+6. 
 ## Data Aquisition:
 
 world happiness 2021 https://github.com/owid/owid-datasets/blob/master/datasets/World%20Happiness%20Report%20(2021)/World%20Happiness%20Report%20(2021).csv
