@@ -32,12 +32,12 @@ Covid global vaccination data:
 
 # Project Deliverables
 ## Report 
--[pdf](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.pdf)
--[rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.Rmd)
+- [pdf](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.pdf)
+- [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.Rmd)
 
 ## Slides
--[html](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.html)
--[rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.Rmd)
+- [html](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.html)
+- [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.Rmd)
 
 ## Vedio
--[link]()
+- [link]()
