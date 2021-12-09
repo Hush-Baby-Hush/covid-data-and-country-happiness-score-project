@@ -3,9 +3,9 @@
 ## Project outline:
 
 1. Visualize the life satisfaction (happiness index) across the globe. (in file [zihanzhou_r](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/zihanzhou_r), done by Zihan Zhou)
-2. Visualize the trend of Covid-19 cases and mortality rates. (in file [covid-deaths](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/covid-deaths), done by Shiyuan Wang)
-3. Visualize the correlation between Covid-19 vaccination rates and world happiness. (in [file vaccination](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/vaccination), done by Kimmy Liu)
-4. Combine the world happiness with Covid-19 cases and deaths, and vaccination rates, and see how the latter three and different factors across fields, such as public policy, public health, economics etc. influence the happiness index. (in file [songyuan](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/songyuan), done by Songyuan Wang)
+2. Visualize the trend of Covid-19 cases and mortality rates, and combine the world happiness with total Covid-19 cases and deaths. (in file [covid-deaths](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/covid-deaths), done by Shiyuan Wang)
+3. Combine the world happiness with vaccination rate, and visualize the correlation between Covid-19 vaccination rates and world happiness. (in [file vaccination](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/vaccination), done by Kimmy Liu)
+4. Use Anova analysis to figure the impacts of Covid-19 cases, deaths, vaccination rates and different factors across fields, such as public policy, public health, economics etc. on the happiness index. (in file [songyuan](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/tree/master/songyuan), done by Songyuan Wang)
 
 ## Data Aquisition:
 
