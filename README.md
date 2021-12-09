@@ -36,7 +36,7 @@ Covid global vaccination data:
 - [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Report_final.Rmd)
 
 ## Slides
-- [html](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.html)
+- [html](https://16c54272ec7144babf3965648bf8f49d.app.rstudio.cloud/file_show?path=%2Fcloud%2Fproject%2FPresentation_final_1.html#(1))
 - [rmd](https://github.com/illinois-stat447/fa21-prj-shiyuan8-sw20-zihanz12-zl32/blob/master/Final_submission/Presentation_final.Rmd)
 
 ## Vedio
